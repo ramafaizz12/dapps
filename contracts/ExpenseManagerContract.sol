@@ -1,4 +1,4 @@
-pragma solidity ^0.8.27;
+pragma solidity ^0.8.19;
 // SPDX-License-Identifier: MIT
 
 
@@ -71,6 +71,7 @@ contract ExpenseManagerContract {
               reasons[i] = transactions[i].reason;
                timestamps[i] = transactions[i].timestamp;
         }
+         return (users, amounts, reasons, timestamps);
     }
 
     function changeOwner(address _newOwner) public onlyOwner{

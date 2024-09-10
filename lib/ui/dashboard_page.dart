@@ -1,3 +1,4 @@
+import 'package:dapps/bloc/dashboard/dashboard_bloc.dart';
 import 'package:dapps/ui/deposit_page.dart';
 import 'package:dapps/ui/widgets/button.dart';
 import 'package:dapps/ui/withdraw_page.dart';
@@ -11,6 +12,13 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
+  final DashboardBloc _dashboardBloc = DashboardBloc();
+  @override
+  void initState() {
+    _dashboardBloc.add(DashboardInitialFetch());
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
